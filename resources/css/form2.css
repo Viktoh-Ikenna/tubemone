@@ -1,0 +1,43 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    background-image: url("../images/login.jpg");
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+form{
+display: grid;
+width:300px;
+height:300px;
+position: relative;
+}
+.form{
+
+    margin:150px 42%;
+background-color: transparent;
+width:fit-content;
+height: fit-content;
+padding:20px 50px;
+box-shadow: 3px 5px 20px -2px black;
+}
+.form h3{
+text-align: center;
+font-size: 40px;
+}
+form input[type="password"],input[type="email"],input[type="text"]{
+    background: none;
+    border:none;
+    border-bottom:2px solid purple;;
+    outline:0;
+}
+form input[type="submit"]{
+
+    color:white;
+    background-color:purple;
+    cursor: pointer;
+    outline:0;
+}
