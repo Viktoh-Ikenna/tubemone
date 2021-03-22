@@ -15,7 +15,7 @@ header{
     grid-template: repeat(20,50px)/repeat(3,1fr);
 }
 nav{
-    grid-area: 1/1/3/7;
+    grid-area: 1/1/2/7;
 background-color: transparent;
 box-shadow: 2px 1px 5px 5px black;
 display: grid;
@@ -25,7 +25,7 @@ align-content: center;
 align-items: center;
 font-size: 25px;
 text-transform: uppercase;
-line-height: 70px;
+line-height: 50px;
 position: fixed;
 width: 100%;
 z-index: 10;
@@ -34,7 +34,7 @@ header nav #img{
     grid-area: 1/1/4/3;
 overflow: hidden;
 width:200px;
-height: 100px;
+height: 60px;
 }
 #img img{
 width:100%;
@@ -54,7 +54,7 @@ nav .menu{
 }
 .menu ul li{
     text-align: center;
-    width: 25%;
+    width: 29%;
     cursor: pointer;
 }
 nav #log{
@@ -76,18 +76,18 @@ nav #log{
     transition:all .7s ease-in-out;
 }
 .menu li::before{
-    top:-1px;
+    top:-2px;
 
 }.menu li::after{
-    top:99px;
+    top:65px;
     
 }
 .menu li:hover::after{
-    top:80px;
+    top:53px;
     background-color: yellowgreen;
 }
 .menu li:hover::before{
-    top:20px;
+    top:5px;
     background-color: yellowgreen;
 }
 #log div:hover{
@@ -98,22 +98,72 @@ nav #log{
 }
 
 main{
-    grid-area: 6/2/12/5;
+    grid-area: 5/2/12/5;
     text-align: center;
     line-height: 50px;
     color:white;
     background-color: orangered;
     text-transform: capitalize;
     opacity: .8;
+    animation:got 2s ease-in-out .1s ;
+}
+@keyframes got{
+    0%{
+        margin-left: 110%;
+    }
+    80%{
+        margin-left: 70%;
+    }
 }
 main p{
     font-size: 30px;
     opacity: 1;
+    
+    animation: mrp 5s ease-in-out ; 
+    
+}
+@keyframes mrp{
+    0%{
+        margin-left: 150%;
+        font-size: 5px;
+        opacity: 0;
+        line-height: 5px;
+    }
+    30%{
+        opacity: .1;
+        font-size: 10px;
+         margin-left: 90%;
+         line-height: 5px;
+    }
+    60%{
+
+        line-height: 7px;
+        font-size: 20px;
+         margin-left: 80%;
+    }
+    80%{
+        font-size: 10px;
+        opacity: .5;
+        margin-left: 70%;
+    }
 }
 main h1{
+    animation: mrh1 5s ease-in-out  ; 
     opacity: 1;
 }
+@keyframes mrh1{
+    0%{
+        opacity: 0;
+    }
+    40%{
+        opacity: .2;  
+    }
+    80%{
+        margin-left: 70%;
+    }
+}
 main .button{
+    transition-delay: 3s;
     opacity: 1;
     position: relative;
     top: 18%;
@@ -123,6 +173,18 @@ main .button{
     margin-left:40%;
     cursor: pointer;
     transition:all .5 ease-in-out;
+    animation: mrb 5s ease-in-out; 
+}
+@keyframes mrb{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    80%{
+        margin-left: 70%;
+    }
 }
 main .button:hover{
     background-color: rgb(212, 233, 24); 
@@ -137,16 +199,24 @@ section{
     text-align: center;
     background-color: blueviolet;
     display:grid;
-    height: 500px;
+    height: 600px;
     justify-content: center;
     align-items: center;
     grid-template: repeat(10,1fr)/repeat(10,1fr);
 }
+section #icon2{
+    grid-area: 1/5/1/6;
+    top:-30px;
+    left:50px;
+    position: relative;
+}
 section h1{
+    position: relative;
     grid-area: 1/1/2/11;
     font-size: 40px;
     color:white;
     padding:40px 0;
+    top:30px;
 }
 section .container{
     position: relative;
@@ -156,7 +226,7 @@ section .container{
     justify-content: space-around;
 }
 section .container .requirements{
-   width:250px;
+   width:200px;
    line-height: 30px;
    border:1px solid orangered;
    padding:20px 10px;
@@ -164,7 +234,7 @@ section .container .requirements{
 }
 #secondSection{
     display:grid;
-    height: 400px;
+    height: 500px;
     grid-template:repeat(2,100%)/repeat(2,50%);
     background-color: orangered; 
     color:white;
@@ -277,4 +347,53 @@ height: 40px;
         margin-right:17px;
         border:1px dashed purple;
     }
+}
+
+.slides{
+    background-color: aqua;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.forArrow{
+    border: 2px solid red;
+    width:95%;
+    height:90%;
+    display:grid;
+    grid-template: repeat(13,1fr)/repeat(24,1fr);
+}
+.slides .conta{
+    grid-area:1/2/14/24;
+    border: 2px solid red;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    
+}
+.slides .conta #co{
+    display:flex;
+    height: 100%;
+    position: relative;
+}
+.slides .conta img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.slides .button{
+   cursor: pointer;
+    z-index: 5;
+    color:black;
+    opacity:0;
+}
+.slides .left{
+    grid-area:7/1/7/2;
+    transition: 1s ease-in-out;
+}
+.slides .right{
+    grid-area:7/24/7/25;
+    text-align: right;
+    transition: 1s ease-in-out;
 }
